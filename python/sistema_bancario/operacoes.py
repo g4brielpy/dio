@@ -11,6 +11,7 @@ def deposito(saldo_atual):
         saldo_atual = saldo_atual + valor_deposito
         # lista de extrato com todos os depositos
         lista_de_depositos.append(valor_deposito)
+        print(f'R$ {valor_deposito:.2f} Adicionado ao saldo')
     else:
         print('Valor inválido')
 

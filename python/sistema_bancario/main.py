@@ -29,7 +29,6 @@ while True:
 
     match opcao:
         case '1':
-            print(saldo)
             saldo = operacoes.deposito(saldo)
 
         case '4':
