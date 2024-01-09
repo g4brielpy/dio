@@ -17,3 +17,7 @@ def deposito(saldo_atual):
 
     return saldo_atual
 
+
+
+def saque(saldo_atual):
+    print('SAQUE')
