@@ -59,6 +59,9 @@ def saque(saldo_atual, quantidade_saque, LIMITE):
         quantidade_saque += 1
         print(f'R$ {valor_saque:.2f} sacados')
 
+    elif valor_saque > saldo_atual:
+        print('Saldo não disponível')
+
     else:
         print('Valor inválido')
 
@@ -74,14 +77,16 @@ def extrato():
     print('EXTRATO')
 
     # verificar se houve alguma movimentação
-    if (lista_de_depositos == [] ) and (lista_de_saques == []):
+    if (lista_de_depositos == []) and (lista_de_saques == []):
         print('Não foram realizadas movimentações')
         return
-    
-    print(f'''
-    Lista de saques: {lista_de_saques}
-    Lista de depositos: {lista_de_depositos}
-    ''')
+
+    # exibindo lista com valores
+    if lista_de_saques:
+        print(f'Lista de saques: R$ {lista_de_saques}')
+    if lista_de_depositos:
+        print(f'Lista de depositos: R$ {lista_de_depositos}')
+
     """
     Essa operação deve listar todos os depósitos e saques realizados na conta. No fim da listagem deve ser exibido o saldo atual da conta. 
     Se o extrato estiver em branco, exibir a mensagem: Não foram realizadas movimentações.
