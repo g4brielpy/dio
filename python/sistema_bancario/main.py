@@ -36,7 +36,8 @@ while True:
             saldo = operacoes.deposito(saldo)
         case '2':
             saldo, quantidade_saque = operacoes.saque(saldo, quantidade_saque, LIMITE)
-
+        case '3':
+            operacoes.extrato()
         case '4':
             break
         case _:
