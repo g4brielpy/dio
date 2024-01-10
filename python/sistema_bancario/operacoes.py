@@ -28,7 +28,7 @@ def deposito(saldo_atual):
     if valor_deposito > 0:
         saldo_atual = saldo_atual + valor_deposito
         # lista de extrato com todos os depositos
-        lista_de_depositos.append(valor_deposito)
+        lista_de_depositos.append(f'R$ {valor_deposito:.2f}')
         print(f'R$ {valor_deposito:.2f} Adicionado ao saldo')
     else:
         print('Valor inválido')
@@ -55,7 +55,7 @@ def saque(saldo_atual, quantidade_saque, LIMITE):
     if (valor_saque <= saldo_atual) and (valor_saque <= LIMITE):
         saldo_atual -= valor_saque
         # lista de extrato com todos os saques
-        lista_de_saques.append(valor_saque)
+        lista_de_saques.append(f'R$ {valor_saque:.2f}')
         quantidade_saque += 1
         print(f'R$ {valor_saque:.2f} sacados')
 
@@ -83,9 +83,9 @@ def extrato():
 
     # exibindo lista com valores
     if lista_de_saques:
-        print(f'Lista de saques: R$ {lista_de_saques}')
+        print(f'Lista de saques: {lista_de_saques}')
     if lista_de_depositos:
-        print(f'Lista de depositos: R$ {lista_de_depositos}')
+        print(f'Lista de depositos: {lista_de_depositos}')
 
     """
     Essa operação deve listar todos os depósitos e saques realizados na conta. No fim da listagem deve ser exibido o saldo atual da conta. 
