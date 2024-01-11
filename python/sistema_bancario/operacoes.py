@@ -40,7 +40,7 @@ def deposito(saldo_atual):
     Todos os depósitos devem ser armazenados em uma variável e exibidos na operação de extrato.
 
     Otimização:
-    utilizar somente argumentos por 'posição'
+    utilizar somente argumentos por 'posição' OK
     """
     
 

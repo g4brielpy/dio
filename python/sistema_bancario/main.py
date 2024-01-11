@@ -36,7 +36,7 @@ while True:
         [2] - Sacar
         [3] - Extrato
         [4] - Sair
-               
+
         SALDO DÍSPONIVEL: {saldo:.2f}
         SAQUES EFETUADOS: {quantidade_saque}
 
@@ -45,9 +45,10 @@ while True:
 
     match opcao:
         case '1':
-            saldo = operacoes.deposito(saldo)
+            saldo = operacoes.deposito(saldo_atual=saldo)
         case '2':
-            saldo, quantidade_saque = operacoes.saque(saldo, quantidade_saque, LIMITE)
+            saldo, quantidade_saque = operacoes.saque(
+                saldo_atual=saldo, quantidade_saque=quantidade_saque, LIMITE=LIMITE)
         case '3':
             operacoes.extrato()
         case '4':
