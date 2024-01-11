@@ -19,10 +19,13 @@ Otimização:
 '''
 
 import operacoes
+import user
 
 # variáveis
 saldo = float(0)
 quantidade_saque = int(0)
+usuarios = list()
+
 # constantes
 LIMITE = int(500)
 LIMITE_SAQUE = int(3)
@@ -31,11 +34,12 @@ while True:
     # Operações solicitadas para o sistema
     menu = str(f'''
     OPERAÇÕES:
-
-        [1] - Depositar
-        [2] - Sacar
-        [3] - Extrato
-        [4] - Sair
+        [0] - Criar Usuário
+        [1] - Cria Conta
+        [2] - Depositar
+        [3] - Sacar
+        [4] - Extrato
+        [5] - Sair
 
         SALDO DÍSPONIVEL: {saldo:.2f}
         SAQUES EFETUADOS: {quantidade_saque}
@@ -44,14 +48,17 @@ while True:
     opcao = str(input(menu))
 
     match opcao:
-        case '1':
-            saldo = operacoes.deposito(saldo_atual=saldo)
+        case '0':
+            usuarios = user.criar_usuario(usuarios)
+            print(usuarios)
         case '2':
+            saldo = operacoes.deposito(saldo_atual=saldo)
+        case '3':
             saldo, quantidade_saque = operacoes.saque(
                 saldo_atual=saldo, quantidade_saque=quantidade_saque, LIMITE=LIMITE)
-        case '3':
-            operacoes.extrato()
         case '4':
+            operacoes.extrato()
+        case '5':
             break
         case _:
             print('Operação inválida, digite novamente!')

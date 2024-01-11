@@ -10,3 +10,23 @@
     O número da conta é sequencial, iniciando em 1. O número da agência é fixo: "0001". 
     O usuário pode ter mais de uma conta, mas uma conta pertence a somente um usuário.
 '''
+
+lista = list()
+
+
+def criar_usuario(lista_de_usuarios):
+    nome_input = str(input('Digite seu nome: '))
+    data_nascimento_input = str(input('Digite sua data de nascimento: '))
+    cpf_input = str(input('Digite seu CPF (somente número): '))
+    endereco_input = str(input('Digite seu endereço: '))
+
+    user = {
+        'nome': nome_input,
+        'nascimento': data_nascimento_input,
+        'cpf': cpf_input,
+        'endereco': endereco_input,
+        'contas': ''
+    }
+    lista_de_usuarios.append(user)
+    
+    return lista_de_usuarios
